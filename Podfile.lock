@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.4.1)
+  - CryptoSwift (1.0.0)
+  - ECDHESSwift (0.0.4):
+    - CryptoSwift (~> 1.0.0)
+    - JOSESwift (~> 1.8)
+  - JOSESwift (1.8.1)
+
+DEPENDENCIES:
+  - Alamofire (= 5.4.1)
+  - ECDHESSwift (= 0.0.4)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CryptoSwift
+    - ECDHESSwift
+    - JOSESwift
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  ECDHESSwift: e52f8731f6424210b2dc076915616f537bf4b927
+  JOSESwift: 49c6e4497e061e085b9680b84b8cd6b5b64329bd
+
+PODFILE CHECKSUM: ff2ee5426eb0fc555bf307deade443428b3319a8
+
+COCOAPODS: 1.10.0

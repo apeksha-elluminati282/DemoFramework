@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 # 1
 s.platform = :ios
 s.ios.deployment_target = '10.0'
-s.name = "DemoFramework"
+s.name = "DemoFramework_Scene"
 s.summary = "Demo framework lets a user select an ice cream flavor."
 s.requires_arc = true
 
@@ -25,8 +25,10 @@ s.source = { :git => "https://github.com/apeksha-elluminati282/DemoFramework.git
 
 # 7
 s.framework = "Foundation"
-#s.dependency 'Alamofire', '~> 4.7'
-#s.dependency 'MBProgressHUD', '~> 1.1.0'
+s.dependency 'Alamofire','5.4.1'
+s.dependency 'ECDHESSwift','0.0.4'
+#s.dependency 'CryptoSwift','1.0.0'
+#s.dependency 'JOSESwift','1.8.1'
 
 # 8
 s.source_files = "DemoFramework/**/*.{h,swift}"
