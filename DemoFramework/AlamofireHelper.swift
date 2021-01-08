@@ -61,7 +61,7 @@ class AlamofireHelper: NSObject {
                     case .success(_):
                         if response.value != nil {
                             
-                            print("Url : - \(String(describing: response.request?.urlRequest)) \n parameters :- \(String(describing: paramData)) \n  Response \(response.value)")
+                            print("Url : - \(String(describing: response.request?.urlRequest)) \n parameters :- \(String(describing: paramData)) \n  Response \(String(describing: response.value))")
                             
                             do {
                                 let data:Data = try JSONSerialization.data(withJSONObject: response.value as? [String:Any] ?? [:], options: .prettyPrinted)
@@ -100,7 +100,7 @@ class AlamofireHelper: NSObject {
                         if response.value != nil {
                             
                             do {
-                                print("Url : - \(String(describing: response.request?.urlRequest)) \n parameters :- \(String(describing: paramData)) \n  Response \(response.value)")
+                                print("Url : - \(String(describing: response.request?.urlRequest)) \n parameters :- \(String(describing: paramData)) \n  Response \(String(describing: response.value))")
 
                                 let data = try JSONSerialization.data(withJSONObject: response.value as? [String:Any] ?? [:], options: .prettyPrinted)
                                 self.dataBlock(data,response.value,nil)
@@ -135,8 +135,8 @@ class AlamofireHelper: NSObject {
         
         if let error = response.error {
             Utility.hideLoading()
-            print(response.response?.url)
-            print(statusCode)
+            print(response.response?.url ?? "")
+            print(statusCode ?? 0)
             let status = "HTTP_ERROR_CODE_" + String(statusCode ?? 0)
             print(status)
 //            Utility.showToast(message: status.localized)
