@@ -25,6 +25,8 @@ s.source = { :git => "https://github.com/apeksha-elluminati282/DemoFramework.git
 
 # 7
 s.framework = "Foundation"
+s.framework = "UIKiT"
+s.framework = "WebKit"
 s.dependency 'Alamofire','5.4.1'
 s.dependency 'ECDHESSwift','0.0.4'
 #s.dependency 'CryptoSwift','1.0.0'

@@ -75,3 +75,9 @@ class Utility
         return currentDate
     }
 }
+extension String
+{
+    func isEmpty() -> Bool {
+        return  self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }   
+}

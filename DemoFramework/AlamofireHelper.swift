@@ -20,20 +20,19 @@ class AlamofireHelper: NSObject {
     
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 1000
-        configuration.timeoutIntervalForResource = 1000
-        let serverTrustManager: [String: ServerTrustEvaluating] = [:]
-//        if !(((preferenceHelper.getAppControlObject()?.payload?.controlEndPoints)?[0].netEndPoint?.scheme)?[0].authority ?? "").isEmpty()
-//        {
-//            let serverTrustManager: [String: ServerTrustEvaluating] = [
-//
-//            ((preferenceHelper.getAppControlObject()!.payload?.controlEndPoints)![0].netEndPoint?.scheme)![0].authority!: DisabledEvaluator(),
-//            ((preferenceHelper.getAppControlObject()!.payload?.dataEndPoints)![0].netEndPoint?.scheme)![0].authority! : DisabledEvaluator(),
-//
-//                  ]
-//            let alamoFireManager = Session(configuration: configuration,serverTrustManager: ServerTrustManager.init(evaluators: serverTrustManager))
-//            return alamoFireManager
-//        }
-//        let serverTrustManager: [String: ServerTrustEvaluating] = [authorityForAppControlObj:DisabledEvaluator()]
+        configuration.timeoutIntervalForResource = 1000        
+        if !(((preferenceHelper.getAppControlObject()?.payload?.controlEndPoints)?[0].netEndPoint?.scheme)?[0].authority ?? "").isEmpty()
+        {
+            let serverTrustManager: [String: ServerTrustEvaluating] = [
+
+                ((preferenceHelper.getAppControlObject()!.payload?.controlEndPoints)![0].netEndPoint?.scheme)![0].authority!: DisabledTrustEvaluator(),
+                ((preferenceHelper.getAppControlObject()!.payload?.dataEndPoints)![0].netEndPoint?.scheme)![0].authority! : DisabledTrustEvaluator(),
+
+                  ]
+            let alamoFireManager = Session(configuration: configuration,serverTrustManager: ServerTrustManager.init(evaluators: serverTrustManager))
+            return alamoFireManager
+        }
+        let serverTrustManager: [String: ServerTrustEvaluating] = [authorityForAppControlObj:DisabledTrustEvaluator()]
         let alamoFireManager = Session(configuration: configuration,serverTrustManager: ServerTrustManager.init(evaluators: serverTrustManager),redirectHandler:Redirector.init(behavior: .follow))
         
         
