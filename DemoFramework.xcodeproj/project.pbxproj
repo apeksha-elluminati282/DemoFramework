@@ -9,7 +9,22 @@
 /* Begin PBXBuildFile section */
 		5AE276BD60212C81B204AAF4 /* Pods_DemoFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E31DBF47918E3D3FEFC2FA7 /* Pods_DemoFramework.framework */; };
 		C2621C9725A6F9CF00BDBCF9 /* DemoFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C2621CA025A6FA9B00BDBCF9 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2621C9F25A6FA9B00BDBCF9 /* Demo.swift */; };
+		C288BE4425A81C0A00334828 /* BSSSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4325A81C0A00334828 /* BSSSignInVC.swift */; };
+		C288BE4725A81CEC00334828 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4625A81CEC00334828 /* AlamofireHelper.swift */; };
+		C288BE4A25A81D4E00334828 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4925A81D4E00334828 /* Utility.swift */; };
+		C288BE5525A8203200334828 /* AppSecurityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5025A8203200334828 /* AppSecurityObject.swift */; };
+		C288BE5625A8203200334828 /* AppEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5125A8203200334828 /* AppEndPoint.swift */; };
+		C288BE5725A8203200334828 /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5225A8203200334828 /* Scheme.swift */; };
+		C288BE5825A8203200334828 /* NetEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5325A8203200334828 /* NetEndPoint.swift */; };
+		C288BE5925A8203200334828 /* NICEASEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5425A8203200334828 /* NICEASEndPoint.swift */; };
+		C288BE5E25A8210C00334828 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE5D25A8210C00334828 /* Common.swift */; };
+		C288BE6725A8232F00334828 /* ControlEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE6025A8232F00334828 /* ControlEndPoints.swift */; };
+		C288BE6825A8232F00334828 /* DataEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE6125A8232F00334828 /* DataEndPoints.swift */; };
+		C288BE6925A8232F00334828 /* AppControlObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE6225A8232F00334828 /* AppControlObjectResponse.swift */; };
+		C288BE6D25A8232F00334828 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE6625A8232F00334828 /* Payload.swift */; };
+		C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7425A8260B00334828 /* EncryptionHeader.swift */; };
+		C288BE7725A8260B00334828 /* Epk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7525A8260B00334828 /* Epk.swift */; };
+		C288BE7A25A8296000334828 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7925A8296000334828 /* PreferenceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +33,22 @@
 		C2621C9225A6F9CF00BDBCF9 /* DemoFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DemoFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFramework.h; sourceTree = "<group>"; };
 		C2621C9625A6F9CF00BDBCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2621C9F25A6FA9B00BDBCF9 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
+		C288BE4325A81C0A00334828 /* BSSSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSSignInVC.swift; sourceTree = "<group>"; };
+		C288BE4625A81CEC00334828 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
+		C288BE4925A81D4E00334828 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		C288BE5025A8203200334828 /* AppSecurityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecurityObject.swift; sourceTree = "<group>"; };
+		C288BE5125A8203200334828 /* AppEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEndPoint.swift; sourceTree = "<group>"; };
+		C288BE5225A8203200334828 /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
+		C288BE5325A8203200334828 /* NetEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetEndPoint.swift; sourceTree = "<group>"; };
+		C288BE5425A8203200334828 /* NICEASEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NICEASEndPoint.swift; sourceTree = "<group>"; };
+		C288BE5D25A8210C00334828 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		C288BE6025A8232F00334828 /* ControlEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEndPoints.swift; sourceTree = "<group>"; };
+		C288BE6125A8232F00334828 /* DataEndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEndPoints.swift; sourceTree = "<group>"; };
+		C288BE6225A8232F00334828 /* AppControlObjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppControlObjectResponse.swift; sourceTree = "<group>"; };
+		C288BE6625A8232F00334828 /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		C288BE7425A8260B00334828 /* EncryptionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionHeader.swift; sourceTree = "<group>"; };
+		C288BE7525A8260B00334828 /* Epk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epk.swift; sourceTree = "<group>"; };
+		C288BE7925A8296000334828 /* PreferenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
 		E238BC0A45433D2BE2D8AEE9 /* Pods-DemoFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoFramework.release.xcconfig"; path = "Target Support Files/Pods-DemoFramework/Pods-DemoFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -40,7 +70,6 @@
 				5E542AEC59FB978FB218EBD1 /* Pods-DemoFramework.debug.xcconfig */,
 				E238BC0A45433D2BE2D8AEE9 /* Pods-DemoFramework.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,11 +102,58 @@
 		C2621C9425A6F9CF00BDBCF9 /* DemoFramework */ = {
 			isa = PBXGroup;
 			children = (
-				C2621C9F25A6FA9B00BDBCF9 /* Demo.swift */,
+				C288BE4D25A8203200334828 /* ResponseDataModels */,
+				C288BE4625A81CEC00334828 /* AlamofireHelper.swift */,
 				C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */,
 				C2621C9625A6F9CF00BDBCF9 /* Info.plist */,
+				C288BE4325A81C0A00334828 /* BSSSignInVC.swift */,
+				C288BE4925A81D4E00334828 /* Utility.swift */,
+				C288BE5D25A8210C00334828 /* Common.swift */,
+				C288BE7925A8296000334828 /* PreferenceHelper.swift */,
 			);
 			path = DemoFramework;
+			sourceTree = "<group>";
+		};
+		C288BE4D25A8203200334828 /* ResponseDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE7325A825EC00334828 /* BSSSignInResponse */,
+				C288BE4E25A8203200334828 /* AppControl */,
+				C288BE4F25A8203200334828 /* AppSecurity */,
+			);
+			path = ResponseDataModels;
+			sourceTree = "<group>";
+		};
+		C288BE4E25A8203200334828 /* AppControl */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE6225A8232F00334828 /* AppControlObjectResponse.swift */,
+				C288BE6025A8232F00334828 /* ControlEndPoints.swift */,
+				C288BE6125A8232F00334828 /* DataEndPoints.swift */,
+				C288BE6625A8232F00334828 /* Payload.swift */,
+			);
+			path = AppControl;
+			sourceTree = "<group>";
+		};
+		C288BE4F25A8203200334828 /* AppSecurity */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE5025A8203200334828 /* AppSecurityObject.swift */,
+				C288BE5125A8203200334828 /* AppEndPoint.swift */,
+				C288BE5225A8203200334828 /* Scheme.swift */,
+				C288BE5325A8203200334828 /* NetEndPoint.swift */,
+				C288BE5425A8203200334828 /* NICEASEndPoint.swift */,
+			);
+			path = AppSecurity;
+			sourceTree = "<group>";
+		};
+		C288BE7325A825EC00334828 /* BSSSignInResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE7425A8260B00334828 /* EncryptionHeader.swift */,
+				C288BE7525A8260B00334828 /* Epk.swift */,
+			);
+			path = BSSSignInResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +261,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2621CA025A6FA9B00BDBCF9 /* Demo.swift in Sources */,
+				C288BE7A25A8296000334828 /* PreferenceHelper.swift in Sources */,
+				C288BE7725A8260B00334828 /* Epk.swift in Sources */,
+				C288BE6725A8232F00334828 /* ControlEndPoints.swift in Sources */,
+				C288BE5525A8203200334828 /* AppSecurityObject.swift in Sources */,
+				C288BE6D25A8232F00334828 /* Payload.swift in Sources */,
+				C288BE4A25A81D4E00334828 /* Utility.swift in Sources */,
+				C288BE5625A8203200334828 /* AppEndPoint.swift in Sources */,
+				C288BE5925A8203200334828 /* NICEASEndPoint.swift in Sources */,
+				C288BE6925A8232F00334828 /* AppControlObjectResponse.swift in Sources */,
+				C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */,
+				C288BE5E25A8210C00334828 /* Common.swift in Sources */,
+				C288BE5825A8203200334828 /* NetEndPoint.swift in Sources */,
+				C288BE5725A8203200334828 /* Scheme.swift in Sources */,
+				C288BE4725A81CEC00334828 /* AlamofireHelper.swift in Sources */,
+				C288BE4425A81C0A00334828 /* BSSSignInVC.swift in Sources */,
+				C288BE6825A8232F00334828 /* DataEndPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
