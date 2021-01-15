@@ -12,41 +12,38 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-public struct AppControlObjectResponse : Codable {
+struct PrivacyObjectPayload : Codable {
+	let privacyObjectID : String?
+	let startDateTime : String?
+	let endDateTime : String?
+	let authentication : Bool?
+	let endPointID : String?
 	let version : String?
-	let messageType : String?
-	let sourceEndPointID : String?
-	let destinationEndPointID : String?
-	let dateTimeStamp : String?
-	let replyID : Int?
-	let replyStatusCode : Int?
-	let replyStatusMessage : String?
-	let payload : Payload?
+	let maskedItems : [String]?
+	let sceneEncryptionKey : SceneEncryptionKey?
 
 	enum CodingKeys: String, CodingKey {
 
+		case privacyObjectID = "PrivacyObjectID"
+		case startDateTime = "StartDateTime"
+		case endDateTime = "EndDateTime"
+		case authentication = "Authentication"
+		case endPointID = "EndPointID"
 		case version = "Version"
-		case messageType = "MessageType"
-		case sourceEndPointID = "SourceEndPointID"
-		case destinationEndPointID = "DestinationEndPointID"
-		case dateTimeStamp = "DateTimeStamp"
-		case replyID = "ReplyID"
-		case replyStatusCode = "ReplyStatusCode"
-		case replyStatusMessage = "ReplyStatusMessage"
-		case payload = "Payload"
+		case maskedItems = "MaskedItems"
+		case sceneEncryptionKey = "SceneEncryptionKey"
 	}
 
-    public init(from decoder: Decoder) throws {
+	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
+		privacyObjectID = try values.decodeIfPresent(String.self, forKey: .privacyObjectID)
+		startDateTime = try values.decodeIfPresent(String.self, forKey: .startDateTime)
+		endDateTime = try values.decodeIfPresent(String.self, forKey: .endDateTime)
+		authentication = try values.decodeIfPresent(Bool.self, forKey: .authentication)
+		endPointID = try values.decodeIfPresent(String.self, forKey: .endPointID)
 		version = try values.decodeIfPresent(String.self, forKey: .version)
-		messageType = try values.decodeIfPresent(String.self, forKey: .messageType)
-		sourceEndPointID = try values.decodeIfPresent(String.self, forKey: .sourceEndPointID)
-		destinationEndPointID = try values.decodeIfPresent(String.self, forKey: .destinationEndPointID)
-		dateTimeStamp = try values.decodeIfPresent(String.self, forKey: .dateTimeStamp)
-		replyID = try values.decodeIfPresent(Int.self, forKey: .replyID)
-		replyStatusCode = try values.decodeIfPresent(Int.self, forKey: .replyStatusCode)
-		replyStatusMessage = try values.decodeIfPresent(String.self, forKey: .replyStatusMessage)
-		payload = try values.decodeIfPresent(Payload.self, forKey: .payload)
+		maskedItems = try values.decodeIfPresent([String].self, forKey: .maskedItems)
+		sceneEncryptionKey = try values.decodeIfPresent(SceneEncryptionKey.self, forKey: .sceneEncryptionKey)
 	}
 
 }

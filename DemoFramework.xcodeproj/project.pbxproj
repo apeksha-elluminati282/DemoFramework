@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		5AE276BD60212C81B204AAF4 /* Pods_DemoFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E31DBF47918E3D3FEFC2FA7 /* Pods_DemoFramework.framework */; };
 		C2621C9725A6F9CF00BDBCF9 /* DemoFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C27D7A7B25B15E9E00288CF0 /* SceneraServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7A25B15E9E00288CF0 /* SceneraServices.swift */; };
+		C27D7A8025B1648B00288CF0 /* NodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7E25B1648B00288CF0 /* NodeResponseModel.swift */; };
+		C27D7A8125B1648B00288CF0 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7F25B1648B00288CF0 /* Node.swift */; };
+		C27D7A8725B16B5200288CF0 /* SceneMarkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */; };
+		C27D7A8825B16B5200288CF0 /* SceneMarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */; };
+		C27D7A8925B16B5200288CF0 /* SceneDataThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */; };
+		C27D7A8F25B16C6700288CF0 /* SceneEncryptionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8C25B16C6700288CF0 /* SceneEncryptionKey.swift */; };
+		C27D7A9025B16C6700288CF0 /* PrivacyObjectPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8D25B16C6700288CF0 /* PrivacyObjectPayload.swift */; };
+		C27D7A9125B16C6700288CF0 /* PrivacyObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8E25B16C6700288CF0 /* PrivacyObjectResponse.swift */; };
+		C27D7A9F25B1768300288CF0 /* SceneDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9525B1768300288CF0 /* SceneDataList.swift */; };
+		C27D7AA025B1768300288CF0 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9625B1768300288CF0 /* BoundingBox.swift */; };
+		C27D7AA125B1768300288CF0 /* ThumbnailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9725B1768300288CF0 /* ThumbnailList.swift */; };
+		C27D7AA225B1768300288CF0 /* AnalysisList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9825B1768300288CF0 /* AnalysisList.swift */; };
+		C27D7AA325B1768300288CF0 /* Encryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9925B1768300288CF0 /* Encryption.swift */; };
+		C27D7AA425B1768300288CF0 /* SceneDataScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9A25B1768300288CF0 /* SceneDataScheme.swift */; };
+		C27D7AA525B1768300288CF0 /* SceneDataNetEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9B25B1768300288CF0 /* SceneDataNetEndPoint.swift */; };
+		C27D7AA625B1768300288CF0 /* PrivacyServerEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9C25B1768300288CF0 /* PrivacyServerEndPoint.swift */; };
+		C27D7AA725B1768300288CF0 /* SceneMarkURIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9D25B1768300288CF0 /* SceneMarkURIResponse.swift */; };
+		C27D7AA825B1768300288CF0 /* DetectedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A9E25B1768300288CF0 /* DetectedObjects.swift */; };
 		C288BE4425A81C0A00334828 /* BSSSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4325A81C0A00334828 /* BSSSignInVC.swift */; };
 		C288BE4725A81CEC00334828 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4625A81CEC00334828 /* AlamofireHelper.swift */; };
 		C288BE4A25A81D4E00334828 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE4925A81D4E00334828 /* Utility.swift */; };
@@ -33,6 +52,25 @@
 		C2621C9225A6F9CF00BDBCF9 /* DemoFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DemoFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFramework.h; sourceTree = "<group>"; };
 		C2621C9625A6F9CF00BDBCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27D7A7A25B15E9E00288CF0 /* SceneraServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneraServices.swift; sourceTree = "<group>"; };
+		C27D7A7E25B1648B00288CF0 /* NodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeResponseModel.swift; sourceTree = "<group>"; };
+		C27D7A7F25B1648B00288CF0 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkResponse.swift; sourceTree = "<group>"; };
+		C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkList.swift; sourceTree = "<group>"; };
+		C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataThumbnail.swift; sourceTree = "<group>"; };
+		C27D7A8C25B16C6700288CF0 /* SceneEncryptionKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneEncryptionKey.swift; sourceTree = "<group>"; };
+		C27D7A8D25B16C6700288CF0 /* PrivacyObjectPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyObjectPayload.swift; sourceTree = "<group>"; };
+		C27D7A8E25B16C6700288CF0 /* PrivacyObjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyObjectResponse.swift; sourceTree = "<group>"; };
+		C27D7A9525B1768300288CF0 /* SceneDataList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataList.swift; sourceTree = "<group>"; };
+		C27D7A9625B1768300288CF0 /* BoundingBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
+		C27D7A9725B1768300288CF0 /* ThumbnailList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailList.swift; sourceTree = "<group>"; };
+		C27D7A9825B1768300288CF0 /* AnalysisList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisList.swift; sourceTree = "<group>"; };
+		C27D7A9925B1768300288CF0 /* Encryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encryption.swift; sourceTree = "<group>"; };
+		C27D7A9A25B1768300288CF0 /* SceneDataScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataScheme.swift; sourceTree = "<group>"; };
+		C27D7A9B25B1768300288CF0 /* SceneDataNetEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataNetEndPoint.swift; sourceTree = "<group>"; };
+		C27D7A9C25B1768300288CF0 /* PrivacyServerEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyServerEndPoint.swift; sourceTree = "<group>"; };
+		C27D7A9D25B1768300288CF0 /* SceneMarkURIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkURIResponse.swift; sourceTree = "<group>"; };
+		C27D7A9E25B1768300288CF0 /* DetectedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectedObjects.swift; sourceTree = "<group>"; };
 		C288BE4325A81C0A00334828 /* BSSSignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSSignInVC.swift; sourceTree = "<group>"; };
 		C288BE4625A81CEC00334828 /* AlamofireHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
 		C288BE4925A81D4E00334828 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -102,21 +140,90 @@
 		C2621C9425A6F9CF00BDBCF9 /* DemoFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C27D7A7925B15E6600288CF0 /* Scenera */,
+				C27D7A7825B15E4100288CF0 /* HelperClass */,
 				C288BE4D25A8203200334828 /* ResponseDataModels */,
-				C288BE4625A81CEC00334828 /* AlamofireHelper.swift */,
 				C2621C9525A6F9CF00BDBCF9 /* DemoFramework.h */,
 				C2621C9625A6F9CF00BDBCF9 /* Info.plist */,
-				C288BE4325A81C0A00334828 /* BSSSignInVC.swift */,
-				C288BE4925A81D4E00334828 /* Utility.swift */,
-				C288BE5D25A8210C00334828 /* Common.swift */,
-				C288BE7925A8296000334828 /* PreferenceHelper.swift */,
 			);
 			path = DemoFramework;
+			sourceTree = "<group>";
+		};
+		C27D7A7825B15E4100288CF0 /* HelperClass */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE4625A81CEC00334828 /* AlamofireHelper.swift */,
+				C288BE5D25A8210C00334828 /* Common.swift */,
+				C288BE7925A8296000334828 /* PreferenceHelper.swift */,
+				C288BE4925A81D4E00334828 /* Utility.swift */,
+			);
+			path = HelperClass;
+			sourceTree = "<group>";
+		};
+		C27D7A7925B15E6600288CF0 /* Scenera */ = {
+			isa = PBXGroup;
+			children = (
+				C288BE4325A81C0A00334828 /* BSSSignInVC.swift */,
+				C27D7A7A25B15E9E00288CF0 /* SceneraServices.swift */,
+			);
+			path = Scenera;
+			sourceTree = "<group>";
+		};
+		C27D7A7D25B1648B00288CF0 /* NodeResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C27D7A7E25B1648B00288CF0 /* NodeResponseModel.swift */,
+				C27D7A7F25B1648B00288CF0 /* Node.swift */,
+			);
+			path = NodeResponse;
+			sourceTree = "<group>";
+		};
+		C27D7A8325B16B5200288CF0 /* SceneMarkResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */,
+				C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */,
+				C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */,
+			);
+			name = SceneMarkResponse;
+			path = ../../../../apeksha/Scenera/SceneraWithMicrosoft/Scenera/Model/ResponseModel/SceneMarkResponse;
+			sourceTree = "<group>";
+		};
+		C27D7A8B25B16C6700288CF0 /* PrivacyObjectResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C27D7A8C25B16C6700288CF0 /* SceneEncryptionKey.swift */,
+				C27D7A8D25B16C6700288CF0 /* PrivacyObjectPayload.swift */,
+				C27D7A8E25B16C6700288CF0 /* PrivacyObjectResponse.swift */,
+			);
+			name = PrivacyObjectResponse;
+			path = DemoFramework/ResponseDataModels/PrivacyObjectResponse;
+			sourceTree = SOURCE_ROOT;
+		};
+		C27D7A9425B1768300288CF0 /* SceneMarkURIResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C27D7A9525B1768300288CF0 /* SceneDataList.swift */,
+				C27D7A9625B1768300288CF0 /* BoundingBox.swift */,
+				C27D7A9725B1768300288CF0 /* ThumbnailList.swift */,
+				C27D7A9825B1768300288CF0 /* AnalysisList.swift */,
+				C27D7A9925B1768300288CF0 /* Encryption.swift */,
+				C27D7A9A25B1768300288CF0 /* SceneDataScheme.swift */,
+				C27D7A9B25B1768300288CF0 /* SceneDataNetEndPoint.swift */,
+				C27D7A9C25B1768300288CF0 /* PrivacyServerEndPoint.swift */,
+				C27D7A9D25B1768300288CF0 /* SceneMarkURIResponse.swift */,
+				C27D7A9E25B1768300288CF0 /* DetectedObjects.swift */,
+			);
+			path = SceneMarkURIResponse;
 			sourceTree = "<group>";
 		};
 		C288BE4D25A8203200334828 /* ResponseDataModels */ = {
 			isa = PBXGroup;
 			children = (
+				C27D7A9425B1768300288CF0 /* SceneMarkURIResponse */,
+				C27D7A8325B16B5200288CF0 /* SceneMarkResponse */,
+				C27D7A8B25B16C6700288CF0 /* PrivacyObjectResponse */,
+				C27D7A7D25B1648B00288CF0 /* NodeResponse */,
 				C288BE7325A825EC00334828 /* BSSSignInResponse */,
 				C288BE4E25A8203200334828 /* AppControl */,
 				C288BE4F25A8203200334828 /* AppSecurity */,
@@ -261,21 +368,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27D7A7B25B15E9E00288CF0 /* SceneraServices.swift in Sources */,
+				C27D7AA725B1768300288CF0 /* SceneMarkURIResponse.swift in Sources */,
 				C288BE7A25A8296000334828 /* PreferenceHelper.swift in Sources */,
 				C288BE7725A8260B00334828 /* Epk.swift in Sources */,
+				C27D7AA225B1768300288CF0 /* AnalysisList.swift in Sources */,
 				C288BE6725A8232F00334828 /* ControlEndPoints.swift in Sources */,
+				C27D7AA525B1768300288CF0 /* SceneDataNetEndPoint.swift in Sources */,
+				C27D7A9025B16C6700288CF0 /* PrivacyObjectPayload.swift in Sources */,
 				C288BE5525A8203200334828 /* AppSecurityObject.swift in Sources */,
+				C27D7A8925B16B5200288CF0 /* SceneDataThumbnail.swift in Sources */,
+				C27D7AA425B1768300288CF0 /* SceneDataScheme.swift in Sources */,
 				C288BE6D25A8232F00334828 /* Payload.swift in Sources */,
+				C27D7A8825B16B5200288CF0 /* SceneMarkList.swift in Sources */,
+				C27D7A8F25B16C6700288CF0 /* SceneEncryptionKey.swift in Sources */,
 				C288BE4A25A81D4E00334828 /* Utility.swift in Sources */,
+				C27D7A8125B1648B00288CF0 /* Node.swift in Sources */,
 				C288BE5625A8203200334828 /* AppEndPoint.swift in Sources */,
+				C27D7AA625B1768300288CF0 /* PrivacyServerEndPoint.swift in Sources */,
 				C288BE5925A8203200334828 /* NICEASEndPoint.swift in Sources */,
+				C27D7AA825B1768300288CF0 /* DetectedObjects.swift in Sources */,
+				C27D7A8725B16B5200288CF0 /* SceneMarkResponse.swift in Sources */,
+				C27D7A9125B16C6700288CF0 /* PrivacyObjectResponse.swift in Sources */,
 				C288BE6925A8232F00334828 /* AppControlObjectResponse.swift in Sources */,
+				C27D7AA325B1768300288CF0 /* Encryption.swift in Sources */,
 				C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */,
+				C27D7A9F25B1768300288CF0 /* SceneDataList.swift in Sources */,
 				C288BE5E25A8210C00334828 /* Common.swift in Sources */,
 				C288BE5825A8203200334828 /* NetEndPoint.swift in Sources */,
+				C27D7AA025B1768300288CF0 /* BoundingBox.swift in Sources */,
 				C288BE5725A8203200334828 /* Scheme.swift in Sources */,
 				C288BE4725A81CEC00334828 /* AlamofireHelper.swift in Sources */,
 				C288BE4425A81C0A00334828 /* BSSSignInVC.swift in Sources */,
+				C27D7A8025B1648B00288CF0 /* NodeResponseModel.swift in Sources */,
+				C27D7AA125B1768300288CF0 /* ThumbnailList.swift in Sources */,
 				C288BE6825A8232F00334828 /* DataEndPoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

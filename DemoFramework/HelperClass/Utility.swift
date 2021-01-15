@@ -74,6 +74,12 @@ class Utility
         let currentDate = dateFormatter.string(from: date)
         return currentDate
     }
+    static func stringToDate(strDate: String, withFormat:String) -> Date{
+           let dateFormatter = DateFormatter()
+           dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC") ?? TimeZone(identifier: "UTC") ??  TimeZone.ReferenceType.default
+           dateFormatter.dateFormat = withFormat
+           return dateFormatter.date(from: strDate) ?? Date()
+    }
 }
 extension String
 {

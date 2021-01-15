@@ -20,7 +20,7 @@ public class BSSSignInVC: UIViewController {
     var privateKey:String = ""
     var webView:WKWebView!
     var activityIndicator: UIActivityIndicatorView!
-    var bssProvider:String = ""
+//    var bssProvider:String = ""
     
     // MARK: - ViewController Life Cycle
     
@@ -49,8 +49,8 @@ public class BSSSignInVC: UIViewController {
                 let decoder = JSONDecoder()
                 let objAppControlObjectResponse = try decoder.decode(AppControlObjectResponse.self, from: data)
                 preferenceHelper.setAppControlObject(objAppControlObjectResponse)
-                preferenceHelper.setBSSProvider(self.bssProvider)
-            
+//                preferenceHelper.setBSSProvider(self.bssProvider)
+                self.navigationController?.popViewController(animated: true)
             
             } catch {
                 print(error.localizedDescription)
@@ -144,14 +144,14 @@ public class BSSSignInVC: UIViewController {
             let dictPayload:[String:String] = ["AppID":objAppSecurity.appID!]
 
             let dictParam:[String:Any] =
-                ["Version":objAppSecurity.version!,
-                 "MessageType":"request",
-                 "SourceEndPointID":objAppSecurity.appInstanceID!,
-                 "DestinationEndPointID":(objAppSecurity.nICEASEndPoint?.netEndPoint?.endPointID)!,
-                 "DateTimeStamp":Utility.dateToString(date: Date(), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),
-                 "CommandID":0,
-                 "CommandType":"/1.0/00000000-5eab-2e10-8003-000000000000/management/GetAppControlObject",
-                 "Payload":dictPayload]
+                [PARAMS.VERSION:objAppSecurity.version!,
+                 PARAMS.MESSAGETYPE:"request",
+                 PARAMS.SOURCEENDPOINTID:objAppSecurity.appInstanceID!,
+                 PARAMS.DESTINATIONENDPOINTID:(objAppSecurity.nICEASEndPoint?.netEndPoint?.endPointID)!,
+                 PARAMS.DATETIMESTAMP:Utility.dateToString(date: Date(), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),
+                 PARAMS.COMMANDID:0,
+                 PARAMS.COMMANDTYPE:"/1.0/00000000-5eab-2e10-8003-000000000000/management/GetAppControlObject",
+                 PARAMS.PAYLOAD:dictPayload]
             
             self.wsGetAppControlObject(dictParam: dictParam,url: HTTP_PROTOCOL + authorityForAppControlObj)
 

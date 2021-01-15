@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-public struct AppControlObjectResponse : Codable {
+struct PrivacyObjectResponse : Codable {
 	let version : String?
 	let messageType : String?
 	let sourceEndPointID : String?
@@ -21,7 +21,7 @@ public struct AppControlObjectResponse : Codable {
 	let replyID : Int?
 	let replyStatusCode : Int?
 	let replyStatusMessage : String?
-	let payload : Payload?
+	let payload : PrivacyObjectPayload?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -36,7 +36,7 @@ public struct AppControlObjectResponse : Codable {
 		case payload = "Payload"
 	}
 
-    public init(from decoder: Decoder) throws {
+	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		version = try values.decodeIfPresent(String.self, forKey: .version)
 		messageType = try values.decodeIfPresent(String.self, forKey: .messageType)
@@ -46,7 +46,7 @@ public struct AppControlObjectResponse : Codable {
 		replyID = try values.decodeIfPresent(Int.self, forKey: .replyID)
 		replyStatusCode = try values.decodeIfPresent(Int.self, forKey: .replyStatusCode)
 		replyStatusMessage = try values.decodeIfPresent(String.self, forKey: .replyStatusMessage)
-		payload = try values.decodeIfPresent(Payload.self, forKey: .payload)
+		payload = try values.decodeIfPresent(PrivacyObjectPayload.self, forKey: .payload)
 	}
 
 }

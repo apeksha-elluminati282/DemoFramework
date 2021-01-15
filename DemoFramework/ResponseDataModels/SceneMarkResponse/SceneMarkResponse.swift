@@ -12,41 +12,38 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-public struct AppControlObjectResponse : Codable {
+struct SceneMarkResponse : Codable {
 	let version : String?
-	let messageType : String?
-	let sourceEndPointID : String?
-	let destinationEndPointID : String?
-	let dateTimeStamp : String?
-	let replyID : Int?
-	let replyStatusCode : Int?
-	let replyStatusMessage : String?
-	let payload : Payload?
+	let startDateTime : String?
+	let endDateTime : String?
+	let pageLength : Int?
+    let nICEItemTypesPresent : [String:Int]?
+	let listDates : [String]?
+	let sceneMarkList : [SceneMarkList]?
+	let continuationToken : String?
 
 	enum CodingKeys: String, CodingKey {
 
 		case version = "Version"
-		case messageType = "MessageType"
-		case sourceEndPointID = "SourceEndPointID"
-		case destinationEndPointID = "DestinationEndPointID"
-		case dateTimeStamp = "DateTimeStamp"
-		case replyID = "ReplyID"
-		case replyStatusCode = "ReplyStatusCode"
-		case replyStatusMessage = "ReplyStatusMessage"
-		case payload = "Payload"
+		case startDateTime = "StartDateTime"
+		case endDateTime = "EndDateTime"
+		case pageLength = "PageLength"
+		case nICEItemTypesPresent = "NICEItemTypesPresent"
+		case listDates = "ListDates"
+		case sceneMarkList = "SceneMarkList"
+		case continuationToken = "ContinuationToken"
 	}
 
-    public init(from decoder: Decoder) throws {
+	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		version = try values.decodeIfPresent(String.self, forKey: .version)
-		messageType = try values.decodeIfPresent(String.self, forKey: .messageType)
-		sourceEndPointID = try values.decodeIfPresent(String.self, forKey: .sourceEndPointID)
-		destinationEndPointID = try values.decodeIfPresent(String.self, forKey: .destinationEndPointID)
-		dateTimeStamp = try values.decodeIfPresent(String.self, forKey: .dateTimeStamp)
-		replyID = try values.decodeIfPresent(Int.self, forKey: .replyID)
-		replyStatusCode = try values.decodeIfPresent(Int.self, forKey: .replyStatusCode)
-		replyStatusMessage = try values.decodeIfPresent(String.self, forKey: .replyStatusMessage)
-		payload = try values.decodeIfPresent(Payload.self, forKey: .payload)
+		startDateTime = try values.decodeIfPresent(String.self, forKey: .startDateTime)
+		endDateTime = try values.decodeIfPresent(String.self, forKey: .endDateTime)
+		pageLength = try values.decodeIfPresent(Int.self, forKey: .pageLength)
+        nICEItemTypesPresent = try values.decodeIfPresent([String:Int].self, forKey: .nICEItemTypesPresent)
+		listDates = try values.decodeIfPresent([String].self, forKey: .listDates)
+		sceneMarkList = try values.decodeIfPresent([SceneMarkList].self, forKey: .sceneMarkList)
+		continuationToken = try values.decodeIfPresent(String.self, forKey: .continuationToken)
 	}
 
 }
