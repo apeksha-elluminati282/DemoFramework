@@ -8,7 +8,7 @@
 
 import UIKit
 
-let  preferenceHelper = PreferenceHelper.preferenceHelper
+public let preferenceHelper = PreferenceHelper.preferenceHelper
 
 public class PreferenceHelper: NSObject {
     private let KEY_APP_CONTROL_OBJECT = "appcontrolobject"
