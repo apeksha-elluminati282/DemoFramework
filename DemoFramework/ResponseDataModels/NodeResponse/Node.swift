@@ -13,13 +13,13 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 public struct Node : Codable {
-    let imageURL:String?
-	let description : String?
-	let nodeID : String?
-	let status : String?
-    var isSelected: Bool?
-    var timeZone : String?
-    var isCameraTimeZoneOn: Bool?
+    public let imageURL:String?
+    public let description : String?
+    public let nodeID : String?
+    public let status : String?
+    public var isSelected: Bool?
+    public var timeZone : String?
+    public var isCameraTimeZoneOn: Bool?
     
 
 	enum CodingKeys: String, CodingKey {

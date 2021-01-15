@@ -44,6 +44,7 @@
 		C2A1FA4E25B1C261004EB699 /* SceneMarkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4B25B1C261004EB699 /* SceneMarkResponse.swift */; };
 		C2A1FA4F25B1C261004EB699 /* SceneMarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4C25B1C261004EB699 /* SceneMarkList.swift */; };
 		C2A1FA5025B1C261004EB699 /* SceneDataThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4D25B1C261004EB699 /* SceneDataThumbnail.swift */; };
+		C2A1FA5C25B1C359004EB699 /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA5B25B1C359004EB699 /* Cachable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		C2A1FA4B25B1C261004EB699 /* SceneMarkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkResponse.swift; sourceTree = "<group>"; };
 		C2A1FA4C25B1C261004EB699 /* SceneMarkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkList.swift; sourceTree = "<group>"; };
 		C2A1FA4D25B1C261004EB699 /* SceneDataThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataThumbnail.swift; sourceTree = "<group>"; };
+		C2A1FA5B25B1C359004EB699 /* Cachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cachable.swift; sourceTree = "<group>"; };
 		E238BC0A45433D2BE2D8AEE9 /* Pods-DemoFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoFramework.release.xcconfig"; path = "Target Support Files/Pods-DemoFramework/Pods-DemoFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 		C27D7A7825B15E4100288CF0 /* HelperClass */ = {
 			isa = PBXGroup;
 			children = (
+				C2A1FA5B25B1C359004EB699 /* Cachable.swift */,
 				C288BE4625A81CEC00334828 /* AlamofireHelper.swift */,
 				C288BE5D25A8210C00334828 /* Common.swift */,
 				C288BE7925A8296000334828 /* PreferenceHelper.swift */,
@@ -391,6 +394,7 @@
 				C288BE6925A8232F00334828 /* AppControlObjectResponse.swift in Sources */,
 				C27D7AA325B1768300288CF0 /* Encryption.swift in Sources */,
 				C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */,
+				C2A1FA5C25B1C359004EB699 /* Cachable.swift in Sources */,
 				C27D7A9F25B1768300288CF0 /* SceneDataList.swift in Sources */,
 				C288BE5E25A8210C00334828 /* Common.swift in Sources */,
 				C288BE5825A8203200334828 /* NetEndPoint.swift in Sources */,

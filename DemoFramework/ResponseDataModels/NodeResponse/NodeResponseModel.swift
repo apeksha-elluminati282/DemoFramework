@@ -12,10 +12,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct NodeResponseModel : Codable {
-    let version : String?
-    let accountId : String?
-	let nodeList : [Node]?
+public struct NodeResponseModel : Codable {
+    public let version : String?
+    public let accountId : String?
+    public let nodeList : [Node]?
 
 	enum CodingKeys: String, CodingKey {
         case version = "Version"
@@ -23,7 +23,7 @@ struct NodeResponseModel : Codable {
 		case nodeList = "NodeList"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
         version = try values.decodeIfPresent(String.self, forKey: .version)
         accountId = try values.decodeIfPresent(String.self, forKey: .accountId)
