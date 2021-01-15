@@ -153,7 +153,7 @@ public class BSSSignInVC: UIViewController {
                  PARAMS.COMMANDTYPE:"/1.0/00000000-5eab-2e10-8003-000000000000/management/GetAppControlObject",
                  PARAMS.PAYLOAD:dictPayload]
             
-            self.wsGetAppControlObject(dictParam: dictParam,url: HTTP_PROTOCOL + authorityForAppControlObj)
+            self.wsGetAppControlObject(dictParam: dictParam,url: HTTP_PROTOCOL + authorityForAppControlObj + "/" + preferenceHelper.getApiVersion() + "/" + preferenceHelper.getEndPointId())
 
         }
         catch{
