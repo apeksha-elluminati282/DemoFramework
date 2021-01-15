@@ -18,9 +18,9 @@ struct WebServices {
     static let GET_SCENE_MARK_MANIFEST = "/data/0000/0000/GetSceneMarkManifest"
     static let GET_PRIVACY_OBJECT = "/management/GetPrivacyObject"
 }
-struct DATE_CONSTANT {
-    static let DATE_TIME_FORMAT_WEB  = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-    static let DATE_FORMAT = "yyyy-MM-dd"
+public struct DATE_CONSTANT {
+    public static let DATE_TIME_FORMAT_WEB  = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    public static let DATE_FORMAT = "yyyy-MM-dd"
 }
 struct PARAMS {
     static let VERSION = "Version"

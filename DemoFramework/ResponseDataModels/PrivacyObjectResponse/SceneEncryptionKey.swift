@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneEncryptionKey : Codable {
+public struct SceneEncryptionKey : Codable {
 	let alg : String?
 	let k : String?
 	let iv : String?
@@ -26,7 +26,7 @@ struct SceneEncryptionKey : Codable {
 		case kid = "kid"
 	}
 
-	init(from decoder: Decoder) throws {
+	public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		alg = try values.decodeIfPresent(String.self, forKey: .alg)
 		k = try values.decodeIfPresent(String.self, forKey: .k)

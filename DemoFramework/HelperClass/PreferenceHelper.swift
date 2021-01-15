@@ -83,7 +83,7 @@ public class PreferenceHelper: NSObject {
             ph.set(encoded, forKey: KEY_SCENE_ENCRYPTION_KEY)
         }
     }
-    func getSceneEncryptionKey() -> SceneEncryptionKey? {
+    public func getSceneEncryptionKey() -> SceneEncryptionKey? {
         if let savedSceneEncryptionKey = ph.object(forKey: KEY_SCENE_ENCRYPTION_KEY) as? Data{
             let decoder = JSONDecoder()
             if let objSceneEncryptionKey = try? decoder.decode(SceneEncryptionKey.self, from: savedSceneEncryptionKey)

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Utility
+public class Utility
 {
     static var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     static var overlayView = UIView()
@@ -67,14 +67,14 @@ class Utility
         }
         return nil
     }
-    static func dateToString(date: Date, withFormat:String) -> String{
+    public static func dateToString(date: Date, withFormat:String) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC") ?? TimeZone(identifier: "UTC") ??  TimeZone.ReferenceType.default
         dateFormatter.dateFormat = withFormat
         let currentDate = dateFormatter.string(from: date)
         return currentDate
     }
-    static func stringToDate(strDate: String, withFormat:String) -> Date{
+    public static func stringToDate(strDate: String, withFormat:String) -> Date{
            let dateFormatter = DateFormatter()
            dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC") ?? TimeZone(identifier: "UTC") ??  TimeZone.ReferenceType.default
            dateFormatter.dateFormat = withFormat

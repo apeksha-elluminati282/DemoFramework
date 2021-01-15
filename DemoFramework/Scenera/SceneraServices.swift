@@ -9,8 +9,7 @@ import Foundation
 public class SceneraFunctions
 {
     var continuesToken:String = ""
-    var arrScenesDate:[Date] = []
-    var arrScenes:[SceneMarkList] = []
+    
     public static func getNodes(completionHandler: @escaping ([Node]?) -> ()){
         Utility.showLoading()
         let dictParam:[String:Any] = [PARAMS.ACCOUNTID:preferenceHelper.getAccountId()]
@@ -28,7 +27,7 @@ public class SceneraFunctions
             }
         }
     }
-    static func getNICEItemTypes(completionHandler: @escaping ([String]?) -> ())
+    public static func getNICEItemTypes(completionHandler: @escaping ([String]?) -> ())
     {
         Utility.showLoading()
         let afh:AlamofireHelper = AlamofireHelper.init()
@@ -41,7 +40,7 @@ public class SceneraFunctions
             completionHandler(response as? [String] ?? [])
         }
     }
-    func getSceneMark(nodeIds:[String],startTime:String = Utility.dateToString(date: Date.init(timeIntervalSince1970: 0), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),endTime:String = Utility.dateToString(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),niceItemTypes:[String],pageLength:Int = 10,isReturnPage:Bool = true,isReturnSceneMarkList:Bool = true,isReturnNICEItemTypes:Bool = true,isReturnSceneMarkDates:Bool = true)  {
+    public func getSceneMark(nodeIds:[String],startTime:String = Utility.dateToString(date: Date.init(timeIntervalSince1970: 0), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),endTime:String = Utility.dateToString(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),niceItemTypes:[String],pageLength:Int = 10,isReturnPage:Bool = true,isReturnSceneMarkList:Bool = true,isReturnNICEItemTypes:Bool = true,isReturnSceneMarkDates:Bool = true,completionHandler: @escaping ([Date]?,[SceneMarkList]?,SceneMarkResponse?) -> ())  {
         
         let afh:AlamofireHelper = AlamofireHelper.init()
         
@@ -67,9 +66,10 @@ public class SceneraFunctions
         let dictHeader:[String:String] = [PARAMS.AUTHORIZATION: (preferenceHelper.getAppControlObject()!.payload?.dataEndPoints![0].netEndPoint?.scheme![0].accessToken)!,PARAMS.ACCEPT:"application/json",PARAMS.CONTENTTYPE:"application/json"]
         
         afh.getResponseFromURL(url:url, methodName: AlamofireHelper.POST_METHOD, paramData: jsonDict, dictHeader: dictHeader) {  (data,response, error) -> (Void) in
-            
+            var arrScenesDate:[Date] = []
+            var arrScenes:[SceneMarkList] = []
             Utility.hideLoading()
-            self.arrScenesDate.removeAll()
+            arrScenesDate.removeAll()
             
             do {
                 let decoder = JSONDecoder()
@@ -77,25 +77,33 @@ public class SceneraFunctions
                 if objSceneMarkResponse.listDates?.count ?? 0 > 0 {
                     for date in objSceneMarkResponse.listDates!
                     {
-                        self.arrScenesDate.append(Utility.stringToDate(strDate: date, withFormat: DATE_CONSTANT.DATE_FORMAT))
+                        arrScenesDate.append(Utility.stringToDate(strDate: date, withFormat: DATE_CONSTANT.DATE_FORMAT))
                     }
                 }
                 self.continuesToken = objSceneMarkResponse.continuationToken ?? ""
-                if self.arrScenes.count == 0 && objSceneMarkResponse.sceneMarkList?.count == 0{
+                if arrScenes.count == 0 && objSceneMarkResponse.sceneMarkList?.count == 0{
                     //                Utility.showToast(message: "MSG_NO_SCENEMARK_AVAILABLE".localized,view: self.parent?.parent?.view)
                 }
                 else{
                     if objSceneMarkResponse.sceneMarkList?.count ?? 0 > 0{
-                        self.arrScenes.append(contentsOf: objSceneMarkResponse.sceneMarkList!)
-                        self.arrScenes = self.arrScenes.sorted(by: {  $0.dateFromDateTimeStamp!.compare(($1.dateFromDateTimeStamp)!) == .orderedDescending })
+                        arrScenes.append(contentsOf: objSceneMarkResponse.sceneMarkList!)
+                        arrScenes = arrScenes.sorted(by: {  $0.dateFromDateTimeStamp!.compare(($1.dateFromDateTimeStamp)!) == .orderedDescending })
                         
                         if preferenceHelper.getSceneEncryptionKey() != nil {
-                            
+                            completionHandler(arrScenesDate,arrScenes,objSceneMarkResponse)
                         }
                         else{
                             // Check if scenemark list co
-                            let objSceneMark = self.arrScenes.first(where: {$0.sceneDataThumbnail?.encryptionOn ?? false})
-                            self.getPrivacyObject(EncryptionkeyId: objSceneMark?.sceneDataThumbnail?.sceneEncryptionKeyID ?? "")
+                            let objSceneMark = arrScenes.first(where: {$0.sceneDataThumbnail?.encryptionOn ?? false})
+                            self.getPrivacyObject(EncryptionkeyId: objSceneMark?.sceneDataThumbnail?.sceneEncryptionKeyID ?? "") { (success) in
+                                if success
+                                {
+                                    completionHandler(arrScenesDate,arrScenes,objSceneMarkResponse)
+                                }else{
+                                    completionHandler(arrScenesDate,arrScenes,objSceneMarkResponse)
+                                }
+                            }
+                            
                         }
                     }
                 }
@@ -103,12 +111,13 @@ public class SceneraFunctions
             } catch let error as NSError {
                 
                 print(error)
+                completionHandler(arrScenesDate,arrScenes,nil)
             }
             
         }
         
     }
-    func getPrivacyObject(EncryptionkeyId:String)  {
+    func getPrivacyObject(EncryptionkeyId:String,completionHandler: @escaping (Bool) -> ())  {
         let body:[String:Any] = [PARAMS.VERSION:preferenceHelper.getApiVersion(),PARAMS.SCENEENCRYPTIONKEYID:EncryptionkeyId]
         let payload:[String:Any] = [PARAMS.BODY:body]
         let dictParam:[String:Any] =
@@ -134,15 +143,16 @@ public class SceneraFunctions
                 if privacyObjectResponse.payload?.sceneEncryptionKey != nil {
                         //Storing SceneEncryptionKey
                     preferenceHelper.setSceneEncryptionKey(((privacyObjectResponse.payload?.sceneEncryptionKey)!))
+                    completionHandler(true)
                 }
-                
+                completionHandler(false)
                 
             }catch {
                 print(error.localizedDescription)
             }
         }
     }
-    func getSceneData(URI:String)
+    public func getSceneData(URI:String,completionHandler: @escaping (SceneMarkURIResponse?) -> ())
     {
         let afh:AlamofireHelper = AlamofireHelper.init()
         let dictHeader:[String:String] = [PARAMS.AUTHORIZATION: (preferenceHelper.getAppControlObject()!.payload?.dataEndPoints![0].netEndPoint?.scheme![0].accessToken)!,PARAMS.ACCEPT:"application/json",PARAMS.CONTENTTYPE:"application/json"]
@@ -152,46 +162,11 @@ public class SceneraFunctions
                 
                 let decoder = JSONDecoder()
                 let objSceneMarkURIResponse = try decoder.decode(SceneMarkURIResponse.self, from: data)
-    //            self.selectedScenes = objSceneMarkURIResponse
-    //            if  self.objUserDetail!.sceneMarkId.firstIndex(where: {$0.compare(self.selectedScenes!.sceneMarkID!) == ComparisonResult.orderedSame}) == nil
-    //            {
-    //                self.objUserDetail?.sceneMarkId.append(self.selectedScenes!.sceneMarkID!)
-    //                preferenceHelper.setUserPreference(self.objUserDetail!)
-    //            }
-    //            self.clearDiskCache()
-    //            for detectedObj in (self.selectedScenes?.detectedObjects)!
-    //            {
-    //                for sceneId in detectedObj.relatedSceneData!
-    //                {
-    //                    for scene in (self.selectedScenes?.sceneDataList)!
-    //                    {
-    //                        if scene.sceneDataID?.compare(sceneId) == ComparisonResult.orderedSame{
-    //                            if scene.dataType?.compare("RGBVideo") == ComparisonResult.orderedSame
-    //                            {
-    //                                self.writeVideoToFile(urlString: scene.sceneDataURI ?? "")
-    //                                break;
-    //                            }
-    //                        }
-    //                    }
-    //                }
-    //            }
-                
-    //                if preferenceHelper.getSceneEncryptionKey() != nil {
-                    
-    //                    self.tblVw.reloadData()
-    //                }
-    //                else{
-                    
-    //                    let objSceneMark = self.arrScenes.first(where: {$0.sceneDataList!.first(where: {($0.encryption?.encryptionOn!)!}) != nil})
-    //                    if let objSceneDataList:SceneDataList = objSceneMark?.sceneDataList?.first(where: {($0.encryption?.encryptionOn!)!})
-    //                    {
-    //                        self.wsGetPrivacyObject(EncryptionkeyId: (objSceneDataList.encryption?.sceneEncryptionKeyID)!)
-    //                    }
-    //                    self.tblVw.reloadData()
-    //                }
+                completionHandler(objSceneMarkURIResponse)
 
             } catch {
                 print(error.localizedDescription)
+                completionHandler(nil)
             }
             
         }

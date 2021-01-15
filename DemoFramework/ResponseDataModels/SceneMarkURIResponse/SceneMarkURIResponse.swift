@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneMarkURIResponse : Codable {
+public struct SceneMarkURIResponse : Codable {
 	let analysisList : [AnalysisList]?
 	let destinationID : String?
 	let detectedObjects : [DetectedObjects]?
@@ -41,7 +41,7 @@ struct SceneMarkURIResponse : Codable {
 		case version = "Version"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		analysisList = try values.decodeIfPresent([AnalysisList].self, forKey: .analysisList)
 		destinationID = try values.decodeIfPresent(String.self, forKey: .destinationID)
