@@ -12,15 +12,15 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneMarkResponse : Codable {
-	let version : String?
-	let startDateTime : String?
-	let endDateTime : String?
-	let pageLength : Int?
-    let nICEItemTypesPresent : [String:Int]?
-	let listDates : [String]?
-	let sceneMarkList : [SceneMarkList]?
-	let continuationToken : String?
+public struct SceneMarkResponse : Codable {
+    public let version : String?
+    public let startDateTime : String?
+    public let endDateTime : String?
+    public let pageLength : Int?
+    public let nICEItemTypesPresent : [String:Int]?
+    public let listDates : [String]?
+    public let sceneMarkList : [SceneMarkList]?
+    public let continuationToken : String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -34,7 +34,7 @@ struct SceneMarkResponse : Codable {
 		case continuationToken = "ContinuationToken"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		version = try values.decodeIfPresent(String.self, forKey: .version)
 		startDateTime = try values.decodeIfPresent(String.self, forKey: .startDateTime)

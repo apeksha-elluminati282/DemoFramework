@@ -12,9 +12,6 @@
 		C27D7A7B25B15E9E00288CF0 /* SceneraServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7A25B15E9E00288CF0 /* SceneraServices.swift */; };
 		C27D7A8025B1648B00288CF0 /* NodeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7E25B1648B00288CF0 /* NodeResponseModel.swift */; };
 		C27D7A8125B1648B00288CF0 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A7F25B1648B00288CF0 /* Node.swift */; };
-		C27D7A8725B16B5200288CF0 /* SceneMarkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */; };
-		C27D7A8825B16B5200288CF0 /* SceneMarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */; };
-		C27D7A8925B16B5200288CF0 /* SceneDataThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */; };
 		C27D7A8F25B16C6700288CF0 /* SceneEncryptionKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8C25B16C6700288CF0 /* SceneEncryptionKey.swift */; };
 		C27D7A9025B16C6700288CF0 /* PrivacyObjectPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8D25B16C6700288CF0 /* PrivacyObjectPayload.swift */; };
 		C27D7A9125B16C6700288CF0 /* PrivacyObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D7A8E25B16C6700288CF0 /* PrivacyObjectResponse.swift */; };
@@ -44,6 +41,9 @@
 		C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7425A8260B00334828 /* EncryptionHeader.swift */; };
 		C288BE7725A8260B00334828 /* Epk.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7525A8260B00334828 /* Epk.swift */; };
 		C288BE7A25A8296000334828 /* PreferenceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C288BE7925A8296000334828 /* PreferenceHelper.swift */; };
+		C2A1FA4E25B1C261004EB699 /* SceneMarkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4B25B1C261004EB699 /* SceneMarkResponse.swift */; };
+		C2A1FA4F25B1C261004EB699 /* SceneMarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4C25B1C261004EB699 /* SceneMarkList.swift */; };
+		C2A1FA5025B1C261004EB699 /* SceneDataThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A1FA4D25B1C261004EB699 /* SceneDataThumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +55,6 @@
 		C27D7A7A25B15E9E00288CF0 /* SceneraServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneraServices.swift; sourceTree = "<group>"; };
 		C27D7A7E25B1648B00288CF0 /* NodeResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeResponseModel.swift; sourceTree = "<group>"; };
 		C27D7A7F25B1648B00288CF0 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkResponse.swift; sourceTree = "<group>"; };
-		C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkList.swift; sourceTree = "<group>"; };
-		C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataThumbnail.swift; sourceTree = "<group>"; };
 		C27D7A8C25B16C6700288CF0 /* SceneEncryptionKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneEncryptionKey.swift; sourceTree = "<group>"; };
 		C27D7A8D25B16C6700288CF0 /* PrivacyObjectPayload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyObjectPayload.swift; sourceTree = "<group>"; };
 		C27D7A8E25B16C6700288CF0 /* PrivacyObjectResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyObjectResponse.swift; sourceTree = "<group>"; };
@@ -87,6 +84,9 @@
 		C288BE7425A8260B00334828 /* EncryptionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionHeader.swift; sourceTree = "<group>"; };
 		C288BE7525A8260B00334828 /* Epk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epk.swift; sourceTree = "<group>"; };
 		C288BE7925A8296000334828 /* PreferenceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceHelper.swift; sourceTree = "<group>"; };
+		C2A1FA4B25B1C261004EB699 /* SceneMarkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkResponse.swift; sourceTree = "<group>"; };
+		C2A1FA4C25B1C261004EB699 /* SceneMarkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneMarkList.swift; sourceTree = "<group>"; };
+		C2A1FA4D25B1C261004EB699 /* SceneDataThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDataThumbnail.swift; sourceTree = "<group>"; };
 		E238BC0A45433D2BE2D8AEE9 /* Pods-DemoFramework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoFramework.release.xcconfig"; path = "Target Support Files/Pods-DemoFramework/Pods-DemoFramework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,17 +178,6 @@
 			path = NodeResponse;
 			sourceTree = "<group>";
 		};
-		C27D7A8325B16B5200288CF0 /* SceneMarkResponse */ = {
-			isa = PBXGroup;
-			children = (
-				C27D7A8425B16B5200288CF0 /* SceneMarkResponse.swift */,
-				C27D7A8525B16B5200288CF0 /* SceneMarkList.swift */,
-				C27D7A8625B16B5200288CF0 /* SceneDataThumbnail.swift */,
-			);
-			name = SceneMarkResponse;
-			path = ../../../../apeksha/Scenera/SceneraWithMicrosoft/Scenera/Model/ResponseModel/SceneMarkResponse;
-			sourceTree = "<group>";
-		};
 		C27D7A8B25B16C6700288CF0 /* PrivacyObjectResponse */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C27D7A9425B1768300288CF0 /* SceneMarkURIResponse */,
-				C27D7A8325B16B5200288CF0 /* SceneMarkResponse */,
+				C2A1FA4A25B1C261004EB699 /* SceneMarkResponse */,
 				C27D7A8B25B16C6700288CF0 /* PrivacyObjectResponse */,
 				C27D7A7D25B1648B00288CF0 /* NodeResponse */,
 				C288BE7325A825EC00334828 /* BSSSignInResponse */,
@@ -261,6 +250,16 @@
 				C288BE7525A8260B00334828 /* Epk.swift */,
 			);
 			path = BSSSignInResponse;
+			sourceTree = "<group>";
+		};
+		C2A1FA4A25B1C261004EB699 /* SceneMarkResponse */ = {
+			isa = PBXGroup;
+			children = (
+				C2A1FA4B25B1C261004EB699 /* SceneMarkResponse.swift */,
+				C2A1FA4C25B1C261004EB699 /* SceneMarkList.swift */,
+				C2A1FA4D25B1C261004EB699 /* SceneDataThumbnail.swift */,
+			);
+			path = SceneMarkResponse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,10 +376,9 @@
 				C27D7AA525B1768300288CF0 /* SceneDataNetEndPoint.swift in Sources */,
 				C27D7A9025B16C6700288CF0 /* PrivacyObjectPayload.swift in Sources */,
 				C288BE5525A8203200334828 /* AppSecurityObject.swift in Sources */,
-				C27D7A8925B16B5200288CF0 /* SceneDataThumbnail.swift in Sources */,
 				C27D7AA425B1768300288CF0 /* SceneDataScheme.swift in Sources */,
 				C288BE6D25A8232F00334828 /* Payload.swift in Sources */,
-				C27D7A8825B16B5200288CF0 /* SceneMarkList.swift in Sources */,
+				C2A1FA5025B1C261004EB699 /* SceneDataThumbnail.swift in Sources */,
 				C27D7A8F25B16C6700288CF0 /* SceneEncryptionKey.swift in Sources */,
 				C288BE4A25A81D4E00334828 /* Utility.swift in Sources */,
 				C27D7A8125B1648B00288CF0 /* Node.swift in Sources */,
@@ -388,8 +386,8 @@
 				C27D7AA625B1768300288CF0 /* PrivacyServerEndPoint.swift in Sources */,
 				C288BE5925A8203200334828 /* NICEASEndPoint.swift in Sources */,
 				C27D7AA825B1768300288CF0 /* DetectedObjects.swift in Sources */,
-				C27D7A8725B16B5200288CF0 /* SceneMarkResponse.swift in Sources */,
 				C27D7A9125B16C6700288CF0 /* PrivacyObjectResponse.swift in Sources */,
+				C2A1FA4E25B1C261004EB699 /* SceneMarkResponse.swift in Sources */,
 				C288BE6925A8232F00334828 /* AppControlObjectResponse.swift in Sources */,
 				C27D7AA325B1768300288CF0 /* Encryption.swift in Sources */,
 				C288BE7625A8260B00334828 /* EncryptionHeader.swift in Sources */,
@@ -397,6 +395,7 @@
 				C288BE5E25A8210C00334828 /* Common.swift in Sources */,
 				C288BE5825A8203200334828 /* NetEndPoint.swift in Sources */,
 				C27D7AA025B1768300288CF0 /* BoundingBox.swift in Sources */,
+				C2A1FA4F25B1C261004EB699 /* SceneMarkList.swift in Sources */,
 				C288BE5725A8203200334828 /* Scheme.swift in Sources */,
 				C288BE4725A81CEC00334828 /* AlamofireHelper.swift in Sources */,
 				C288BE4425A81C0A00334828 /* BSSSignInVC.swift in Sources */,

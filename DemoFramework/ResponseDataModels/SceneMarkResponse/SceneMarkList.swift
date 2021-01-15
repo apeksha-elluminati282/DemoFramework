@@ -12,13 +12,13 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneMarkList : Codable {
-	let sceneMarkID : String?
-	let sceneMarkURI : String?
-	let timeStamp : String?
-    let sceneDataThumbnail:SceneDataThumbnail?
-    let nodeID : String?
-    let dateFromDateTimeStamp: Date?
+public struct SceneMarkList : Codable {
+    public let sceneMarkID : String?
+    public let sceneMarkURI : String?
+    public let timeStamp : String?
+    public let sceneDataThumbnail:SceneDataThumbnail?
+    public let nodeID : String?
+    public let dateFromDateTimeStamp: Date?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -30,7 +30,7 @@ struct SceneMarkList : Codable {
         
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		sceneMarkID = try values.decodeIfPresent(String.self, forKey: .sceneMarkID) ?? ""
 		sceneMarkURI = try values.decodeIfPresent(String.self, forKey: .sceneMarkURI) ?? ""

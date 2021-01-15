@@ -12,11 +12,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneDataThumbnail : Codable {
-	let sceneModeDetectionType : String?
-	let sceneDataThumbnailURI : String?
-	let encryptionOn : Bool?
-	let sceneEncryptionKeyID : String?
+public struct SceneDataThumbnail : Codable {
+    public let sceneModeDetectionType : String?
+    public let sceneDataThumbnailURI : String?
+    public let encryptionOn : Bool?
+    public let sceneEncryptionKeyID : String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -26,7 +26,7 @@ struct SceneDataThumbnail : Codable {
 		case sceneEncryptionKeyID = "SceneEncryptionKeyID"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		sceneModeDetectionType = try values.decodeIfPresent(String.self, forKey: .sceneModeDetectionType) ?? ""
 		sceneDataThumbnailURI = try values.decodeIfPresent(String.self, forKey: .sceneDataThumbnailURI) ?? ""
