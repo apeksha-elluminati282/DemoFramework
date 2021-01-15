@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Node : Codable {
+public struct Node : Codable {
     let imageURL:String?
 	let description : String?
 	let nodeID : String?
@@ -34,7 +34,7 @@ struct Node : Codable {
 	}
     
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		description = try values.decodeIfPresent(String.self, forKey: .description)
 		nodeID = try values.decodeIfPresent(String.self, forKey: .nodeID)

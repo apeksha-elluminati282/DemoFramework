@@ -11,7 +11,7 @@ public class SceneraFunctions
     var continuesToken:String = ""
     var arrScenesDate:[Date] = []
     var arrScenes:[SceneMarkList] = []
-    static func getNodes(completionHandler: @escaping ([Node]?) -> ()){
+    public static func getNodes(completionHandler: @escaping ([Node]?) -> ()){
         Utility.showLoading()
         let dictParam:[String:Any] = [PARAMS.ACCOUNTID:preferenceHelper.getAccountId()]
         let dictHeader:[String:String] = [PARAMS.AUTHORIZATION: (preferenceHelper.getAppControlObject()!.payload?.dataEndPoints![0].netEndPoint?.scheme![0].accessToken)!,PARAMS.ACCEPT:"application/json",PARAMS.CONTENTTYPE:"application/json"]
