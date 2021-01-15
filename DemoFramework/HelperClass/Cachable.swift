@@ -11,7 +11,7 @@ import UIKit
 import CryptoSwift
 
 //1 Create the protocol
-protocol Cachable {}
+public protocol Cachable {}
 
 //2 creating a imageCache private instance
 private let imageCache = NSCache<NSString, UIImage>()
@@ -23,8 +23,8 @@ extension UIImageView: Cachable {}
 extension Cachable where Self: UIImageView {
     
     //5 creating the function
-    typealias SuccessCompletion = (Bool) -> ()
-    func loadImageUsingCacheWithURLString(_ URLString: String, placeHolder: UIImage?,mode:UIView.ContentMode = .scaleAspectFill, completion: @escaping SuccessCompletion) {
+    public typealias SuccessCompletion = (Bool) -> ()
+    public func loadImageUsingCacheWithURLString(_ URLString: String, placeHolder: UIImage?,mode:UIView.ContentMode = .scaleAspectFill, completion: @escaping SuccessCompletion) {
         self.contentMode = mode
         self.image = nil
         if let cachedImage = imageCache.object(forKey: NSString(string: URLString)) {
@@ -64,7 +64,7 @@ extension Cachable where Self: UIImageView {
             self.image = placeHolder
         }
     }
-    func decryptImageData(imageData:Data) -> Data  {
+    public func decryptImageData(imageData:Data) -> Data  {
         do {
             
             let objEncryptionKey = preferenceHelper.getSceneEncryptionKey()
