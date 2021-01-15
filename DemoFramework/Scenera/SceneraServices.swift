@@ -8,7 +8,7 @@
 import Foundation
 public class SceneraFunctions
 {
-    var continuesToken:String = ""
+    
     
     public static func getNodes(completionHandler: @escaping ([Node]?) -> ()){
         Utility.showLoading()
@@ -40,7 +40,7 @@ public class SceneraFunctions
             completionHandler(response as? [String] ?? [])
         }
     }
-    public func getSceneMark(nodeIds:[String],startTime:String = Utility.dateToString(date: Date.init(timeIntervalSince1970: 0), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),endTime:String = Utility.dateToString(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),niceItemTypes:[String],pageLength:Int = 10,isReturnPage:Bool = true,isReturnSceneMarkList:Bool = true,isReturnNICEItemTypes:Bool = true,isReturnSceneMarkDates:Bool = true,completionHandler: @escaping ([Date]?,[SceneMarkList]?,SceneMarkResponse?) -> ())  {
+    public static func getSceneMark(nodeIds:[String],startTime:String = Utility.dateToString(date: Date.init(timeIntervalSince1970: 0), withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),endTime:String = Utility.dateToString(date: Calendar.current.date(byAdding: .day, value: 1, to: Date())!, withFormat: DATE_CONSTANT.DATE_TIME_FORMAT_WEB),niceItemTypes:[String],pageLength:Int = 10,isReturnPage:Bool = true,isReturnSceneMarkList:Bool = true,isReturnNICEItemTypes:Bool = true,isReturnSceneMarkDates:Bool = true,continuesToken:String = "",completionHandler: @escaping ([Date]?,[SceneMarkList]?,SceneMarkResponse?) -> ())  {
         
         let afh:AlamofireHelper = AlamofireHelper.init()
         
@@ -80,7 +80,7 @@ public class SceneraFunctions
                         arrScenesDate.append(Utility.stringToDate(strDate: date, withFormat: DATE_CONSTANT.DATE_FORMAT))
                     }
                 }
-                self.continuesToken = objSceneMarkResponse.continuationToken ?? ""
+                
                 if arrScenes.count == 0 && objSceneMarkResponse.sceneMarkList?.count == 0{
                     //                Utility.showToast(message: "MSG_NO_SCENEMARK_AVAILABLE".localized,view: self.parent?.parent?.view)
                 }
@@ -95,7 +95,7 @@ public class SceneraFunctions
                         else{
                             // Check if scenemark list co
                             let objSceneMark = arrScenes.first(where: {$0.sceneDataThumbnail?.encryptionOn ?? false})
-                            self.getPrivacyObject(EncryptionkeyId: objSceneMark?.sceneDataThumbnail?.sceneEncryptionKeyID ?? "") { (success) in
+                            getPrivacyObject(EncryptionkeyId: objSceneMark?.sceneDataThumbnail?.sceneEncryptionKeyID ?? "") { (success) in
                                 if success
                                 {
                                     completionHandler(arrScenesDate,arrScenes,objSceneMarkResponse)
@@ -117,7 +117,7 @@ public class SceneraFunctions
         }
         
     }
-    func getPrivacyObject(EncryptionkeyId:String,completionHandler: @escaping (Bool) -> ())  {
+    static func getPrivacyObject(EncryptionkeyId:String,completionHandler: @escaping (Bool) -> ())  {
         let body:[String:Any] = [PARAMS.VERSION:preferenceHelper.getApiVersion(),PARAMS.SCENEENCRYPTIONKEYID:EncryptionkeyId]
         let payload:[String:Any] = [PARAMS.BODY:body]
         let dictParam:[String:Any] =
