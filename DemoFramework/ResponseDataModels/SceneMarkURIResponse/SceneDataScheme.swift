@@ -12,12 +12,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneDataScheme : Codable {
-	let sceneProtocol : String?
-	let authority : String?
-	let accessToken : String?
-	let role : String?
-	let validationKey : String?
+public struct SceneDataScheme : Codable {
+    public let sceneProtocol : String?
+    public let authority : String?
+    public let accessToken : String?
+    public let role : String?
+    public let validationKey : String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -28,7 +28,7 @@ struct SceneDataScheme : Codable {
 		case validationKey = "ValidationKey"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		sceneProtocol = try values.decodeIfPresent(String.self, forKey: .sceneProtocol)
 		authority = try values.decodeIfPresent(String.self, forKey: .authority)

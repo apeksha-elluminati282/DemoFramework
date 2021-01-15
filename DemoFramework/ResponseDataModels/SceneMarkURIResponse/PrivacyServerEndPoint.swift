@@ -12,9 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct PrivacyServerEndPoint : Codable {
-	let appEndPoint : String?
-	let netEndPoint : SceneDataNetEndPoint?
+public struct PrivacyServerEndPoint : Codable {
+    public let appEndPoint : String?
+    public let netEndPoint : SceneDataNetEndPoint?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -22,7 +22,7 @@ struct PrivacyServerEndPoint : Codable {
 		case netEndPoint = "NetEndPoint"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		appEndPoint = try values.decodeIfPresent(String.self, forKey: .appEndPoint)
 		netEndPoint = try values.decodeIfPresent(SceneDataNetEndPoint.self, forKey: .netEndPoint)

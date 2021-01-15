@@ -12,17 +12,17 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneDataList : Codable {
-	let dataType : String?
-	let encryption : Encryption?
-	let mediaFormat : String?
-	let sceneDataID : String?
-	let sceneDataURI : String?
-	let sourceNodeDescription : String?
-	let sourceNodeID : String?
-	let status : String?
-	let timeStamp : String?
-    let dateFromDateTimeStamp: Date?
+public struct SceneDataList : Codable {
+    public let dataType : String?
+    public let encryption : Encryption?
+    public let mediaFormat : String?
+    public let sceneDataID : String?
+    public let sceneDataURI : String?
+    public let sourceNodeDescription : String?
+    public let sourceNodeID : String?
+    public let status : String?
+    public let timeStamp : String?
+    public let dateFromDateTimeStamp: Date?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -37,7 +37,7 @@ struct SceneDataList : Codable {
 		case timeStamp = "TimeStamp"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		dataType = try values.decodeIfPresent(String.self, forKey: .dataType)
 		encryption = try values.decodeIfPresent(Encryption.self, forKey: .encryption)

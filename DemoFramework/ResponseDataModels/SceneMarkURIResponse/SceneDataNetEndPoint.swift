@@ -12,12 +12,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct SceneDataNetEndPoint : Codable {
-	let aPIVersion : String?
-	let endPointID : String?
-	let nodeID : String?
-	let portID : String?
-	let scheme : [SceneDataScheme]?
+public struct SceneDataNetEndPoint : Codable {
+    public let aPIVersion : String?
+    public let endPointID : String?
+    public let nodeID : String?
+    public let portID : String?
+    public let scheme : [SceneDataScheme]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -28,7 +28,7 @@ struct SceneDataNetEndPoint : Codable {
 		case scheme = "Scheme"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		aPIVersion = try values.decodeIfPresent(String.self, forKey: .aPIVersion)
 		endPointID = try values.decodeIfPresent(String.self, forKey: .endPointID)

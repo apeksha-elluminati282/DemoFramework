@@ -12,9 +12,9 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct ThumbnailList : Codable {
-	let sceneDataID : String?
-	let versionNumber : Int?
+public struct ThumbnailList : Codable {
+    public let sceneDataID : String?
+    public let versionNumber : Int?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -22,7 +22,7 @@ struct ThumbnailList : Codable {
 		case versionNumber = "VersionNumber"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		sceneDataID = try values.decodeIfPresent(String.self, forKey: .sceneDataID)
 		versionNumber = try values.decodeIfPresent(Int.self, forKey: .versionNumber)

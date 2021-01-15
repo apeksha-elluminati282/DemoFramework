@@ -12,12 +12,12 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct AnalysisList : Codable {
-	let analysisDescription : String?
-	let customAnalysisID : String?
-	let processingStatus : String?
-	let sceneMode : String?
-	let versionNumber : Int?
+public struct AnalysisList : Codable {
+    public let analysisDescription : String?
+    public let customAnalysisID : String?
+    public let processingStatus : String?
+    public let sceneMode : String?
+    public let versionNumber : Int?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -28,7 +28,7 @@ struct AnalysisList : Codable {
 		case versionNumber = "VersionNumber"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		analysisDescription = try values.decodeIfPresent(String.self, forKey: .analysisDescription)
 		customAnalysisID = try values.decodeIfPresent(String.self, forKey: .customAnalysisID)

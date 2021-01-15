@@ -12,10 +12,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Encryption : Codable {
-	let encryptionOn : Bool?
-    let sceneEncryptionKeyID : String?
-    let privacyServerEndPoint : PrivacyServerEndPoint?
+public struct Encryption : Codable {
+    public let encryptionOn : Bool?
+    public let sceneEncryptionKeyID : String?
+    public let privacyServerEndPoint : PrivacyServerEndPoint?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -24,7 +24,7 @@ struct Encryption : Codable {
         case privacyServerEndPoint = "PrivacyServerEndPoint"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		encryptionOn = try values.decodeIfPresent(Bool.self, forKey: .encryptionOn)
         sceneEncryptionKeyID = try values.decodeIfPresent(String.self, forKey: .sceneEncryptionKeyID)

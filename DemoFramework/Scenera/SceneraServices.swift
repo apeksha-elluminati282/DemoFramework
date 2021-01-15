@@ -152,7 +152,7 @@ public class SceneraFunctions
             }
         }
     }
-    public func getSceneData(URI:String,completionHandler: @escaping (SceneMarkURIResponse?) -> ())
+    public static func getSceneData(URI:String,completionHandler: @escaping (SceneMarkURIResponse?) -> ())
     {
         let afh:AlamofireHelper = AlamofireHelper.init()
         let dictHeader:[String:String] = [PARAMS.AUTHORIZATION: (preferenceHelper.getAppControlObject()!.payload?.dataEndPoints![0].netEndPoint?.scheme![0].accessToken)!,PARAMS.ACCEPT:"application/json",PARAMS.CONTENTTYPE:"application/json"]

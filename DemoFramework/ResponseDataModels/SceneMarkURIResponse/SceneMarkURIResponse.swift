@@ -13,18 +13,18 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 public struct SceneMarkURIResponse : Codable {
-	let analysisList : [AnalysisList]?
-	let destinationID : String?
-	let detectedObjects : [DetectedObjects]?
-	let nodeID : String?
-	let portID : String?
-	let sceneDataList : [SceneDataList]?
-	let sceneMarkID : String?
-	let sceneMarkStatus : String?
-	let thumbnailList : [ThumbnailList]?
-	let timeStamp : String?
-	let version : String?
-    var cameraDesc: String?
+    public let analysisList : [AnalysisList]?
+    public let destinationID : String?
+    public let detectedObjects : [DetectedObjects]?
+    public let nodeID : String?
+    public let portID : String?
+    public let sceneDataList : [SceneDataList]?
+    public let sceneMarkID : String?
+    public let sceneMarkStatus : String?
+    public let thumbnailList : [ThumbnailList]?
+    public let timeStamp : String?
+    public let version : String?
+    public var cameraDesc: String?
     
 	enum CodingKeys: String, CodingKey {
 

@@ -12,11 +12,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct BoundingBox : Codable {
-	let height : Int?
-	let width : Int?
-	let xCoordinate : Int?
-	let yCoordinate : Int?
+public struct BoundingBox : Codable {
+    public let height : Int?
+    public let width : Int?
+    public let xCoordinate : Int?
+    public let yCoordinate : Int?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -26,7 +26,7 @@ struct BoundingBox : Codable {
 		case yCoordinate = "YCoordinate"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		height = try values.decodeIfPresent(Int.self, forKey: .height)
 		width = try values.decodeIfPresent(Int.self, forKey: .width)

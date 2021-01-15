@@ -12,11 +12,11 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct DetectedObjects : Codable {
-	let algorithmID : String?
-	let boundingBox : BoundingBox?
-	let nICEItemType : String?
-	let relatedSceneData : [String]?
+public struct DetectedObjects : Codable {
+    public let algorithmID : String?
+    public let boundingBox : BoundingBox?
+    public let nICEItemType : String?
+    public let relatedSceneData : [String]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -26,7 +26,7 @@ struct DetectedObjects : Codable {
 		case relatedSceneData = "RelatedSceneData"
 	}
 
-	init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		algorithmID = try values.decodeIfPresent(String.self, forKey: .algorithmID)
 		boundingBox = try values.decodeIfPresent(BoundingBox.self, forKey: .boundingBox)
