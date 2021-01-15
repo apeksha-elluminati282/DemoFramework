@@ -20,7 +20,7 @@ private let imageCache = NSCache<NSString, UIImage>()
 extension UIImageView: Cachable {}
 
 //4 creating a protocol extension to add optional function implementations, 
-public extension Cachable where Self: UIImageView {
+extension Cachable where Self: UIImageView {
     
     //5 creating the function
     typealias SuccessCompletion = (Bool) -> ()
