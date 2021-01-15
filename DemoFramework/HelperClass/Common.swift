@@ -7,7 +7,7 @@
 
 import Foundation
 
-var HTTP_PROTOCOL:String = "https://"
+var HTTP_PROTOCOL:String = "http://"
 
 struct WebServices {
     
