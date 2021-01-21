@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CryptoSwift
 
 public class Utility
 {
@@ -79,6 +80,77 @@ public class Utility
            dateFormatter.timeZone = TimeZone.init(abbreviation: "UTC") ?? TimeZone(identifier: "UTC") ??  TimeZone.ReferenceType.default
            dateFormatter.dateFormat = withFormat
            return dateFormatter.date(from: strDate) ?? Date()
+    }
+    public static func saveVideo(urlString: String,completionHandler: @escaping (URL?) -> ()) {
+        guard let videoUrl = URL(string: urlString) else {
+            Utility.hideLoading()
+            completionHandler(nil)
+            print("error in playing video")
+            return
+        }
+        DispatchQueue.global().async {
+            do {
+                let videoData = try Utility.decryptVideoData(videoData: Data(contentsOf: videoUrl))
+                
+                
+                let fm = FileManager.default
+                guard let docUrl = fm.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                    print("Unable to reach the documents folder")
+                    
+                    return
+                }
+                var fileName:String = "myVideo.mp4"
+                if let strVideoRange = urlString.range(of: ".mp4")
+                {
+                    let test = String(urlString[..<strVideoRange.upperBound])
+                    if let range = test.range(of: "/",options: .backwards)
+                    {
+                        print(test[..<range.upperBound])
+                        let startPos = Int(test.distance(from: urlString.startIndex, to: range.upperBound))
+                        fileName = String(test[String.Index(utf16Offset: startPos, in: test)..<String.Index(utf16Offset: test.count, in: test)])
+                        print(fileName)
+                    }
+                }
+                let filePath =  docUrl.appendingPathComponent("Videos")
+                if !fm.fileExists(atPath: filePath.path) {
+                    do {
+                        try fm.createDirectory(atPath: filePath.path, withIntermediateDirectories: true, attributes: nil)
+                    } catch {
+                        NSLog("Couldn't create document directory")
+                    }
+                }
+                let localUrl = filePath.appendingPathComponent(fileName)
+                try videoData.write(to: localUrl)
+                DispatchQueue.main.async {
+                    completionHandler(localUrl)
+                    Utility.hideLoading()
+                    
+                }
+                
+                
+            } catch  {
+                completionHandler(nil)
+                Utility.hideLoading()
+                print("could not save data")
+            }
+        }
+        
+    }
+    public static func decryptVideoData(videoData:Data) -> Data  {
+        do {
+            let objEncryptionKey = preferenceHelper.getSceneEncryptionKey()
+            let key:Array<UInt8> = Data.init(base64Encoded: (objEncryptionKey?.k) ?? "")!.bytes
+            let iv:Array<UInt8> = Data.init(base64Encoded:(objEncryptionKey?.iv) ?? "")!.bytes
+            let encryptedText:Array<UInt8> = videoData.bytes
+            let decrypted = try AES(key: key, blockMode: CTR.init(iv: iv), padding: .pkcs7).decrypt(encryptedText)
+            return Data(decrypted)
+
+            
+        }
+        catch{
+            print(error)
+        }
+        return Data()
     }
 }
 extension String
